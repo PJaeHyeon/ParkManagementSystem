@@ -7,20 +7,20 @@ public class MenuManager {
 		Scanner input = new Scanner(System.in);
 		
 		while(num != 6){
-			System.out.println("================================");
-			System.out.println("1. Add Player                  *");
-			System.out.println("2. Delete Player               *");
-			System.out.println("3. Edit Player                 *");
-			System.out.println("4. View Player                 *");
-			System.out.println("5. Show a Menu                 *");
-			System.out.println("6. Exit                        *");
-			System.out.println("Select one number between 1-6: *");
-			System.out.println("================================");
-			num = input.nextInt();
-			switch(num) {
+			System.out.println("================================"); //Input Layout
+			System.out.println("1. Add Player                  *"); //Add Player 출력
+			System.out.println("2. Delete Player               *"); //Delele Player 출력
+			System.out.println("3. Edit Player                 *"); //Edit Player 출력
+			System.out.println("4. View Player                 *"); //View Player 출력
+			System.out.println("5. Show a Menu                 *"); //Show a Menu 출력
+			System.out.println("6. Exit                        *"); //Exit 출력
+			System.out.println("Select one number between 1-6: *"); //메뉴 넘버 유도 문장 출력
+			System.out.println("================================"); //Input Layout
+			num = input.nextInt(); //num 입력 int 변수 선언
+			switch(num) {        //num입력에 따른 스위치문
 			case 1:
-				System.out.print("Player Number: ");
-				int	playernum = input.nextInt();
+				System.out.print("Player Number: "); //
+				int playernum = input.nextInt();
 				System.out.print("Player Name: ");
 				String playername = input.next();
 				System.out.print("Player's Team: ");
