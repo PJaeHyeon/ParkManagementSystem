@@ -19,14 +19,14 @@ public class MenuManager {
 			num = input.nextInt(); //num 입력 int 변수 선언
 			switch(num) {        //num입력에 따른 스위치문
 			case 1:
-				System.out.print("Player Number: "); //
-				int playernum = input.nextInt();
+				System.out.print("Player Number: "); 
+				int playernum = input.nextInt(); //선수 번호 입력
 				System.out.print("Player Name: ");
-				String playername = input.next();
+				String playername = input.next(); //선수 이름 입력
 				System.out.print("Player's Team: ");
-				String playerteam = input.next();
+				String playerteam = input.next(); //선수 소속팀 입력
 				System.out.print("Player's Salary");
-				int playersal = input.nextInt();
+				int playersal = input.nextInt(); //선수 연봉 입력
 				
 				System.out.println(playernum);
 				System.out.println(playername);
