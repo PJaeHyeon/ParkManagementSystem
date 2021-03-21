@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 
-public class ManageMent {
+public class Menu {
 
 	public static void main(String[] args) {
 		int num = 0;
@@ -10,9 +10,9 @@ public class ManageMent {
 		
 		
 		while(num != 6){
-			System.out.println("================================"); //Input Layout
+			System.out.println("================================"); //Input Layout 
 			System.out.println("1. Add Player                  *"); //Add Player 출력
-			System.out.println("2. Delete Player               *"); //Delele Player 출력
+			System.out.println("2. Delete Player               *"); //Delele Player 출력 
 			System.out.println("3. Edit Player                 *"); //Edit Player 출력
 			System.out.println("4. View Player                 *"); //View Player 출력
 			System.out.println("5. Show a Menu                 *"); //Show a Menu 출력
@@ -25,7 +25,7 @@ public class ManageMent {
 			int playernum , playersal;	
 			String playername,playerteam;
 			
-			switch(num){						//num입력에 따른 스위치문
+			switch(num){						///num입력에 따른 스위치문
 				
 			case 1:
 				System.out.print("Player Number: "); 
