@@ -25,7 +25,7 @@ public class Menu {
 			int playernum , playersal;	
 			String playername,playerteam;
 			
-			switch(num){						///num입력에 따른 스위치문
+			switch(num){						//num입력에 따른 스위치문
 				
 			case 1:
 				System.out.print("Player Number: "); 
@@ -37,10 +37,10 @@ public class Menu {
 				System.out.print("Player's Salary: ");
 				playersal = input.nextInt(); //선수 연봉 입력
 				
-				System.out.printf("Playernum is : %d \n",playernum);
-				System.out.printf("Playername is : %s \n",playername);
-				System.out.printf("Playerteam is : %s \n",playerteam);
-				System.out.printf("PlayerSalary is : %d \n",playersal);
+				System.out.printf("PlayerNumber is : %d \n",playernum); //선수 번호 출력
+				System.out.printf("PlayerName is : %s \n",playername); //선수 이름 출력
+				System.out.printf("PlayerTeam is : %s \n",playerteam); //선수 팀 출력
+				System.out.printf("PlayerSalary is : %d $ \n",playersal);//선수 연봉 출력
 				
 				break;
 			
