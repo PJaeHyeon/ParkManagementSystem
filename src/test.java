@@ -8,6 +8,8 @@ public class test {
 		System.out.println("4. View Player");
 		System.out.println("5. Exit");
 		
+		System.out.println("test 2");
+		
 	}
 
 }
