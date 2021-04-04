@@ -3,15 +3,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PlayerManager {
-	ArrayList<Player3> players= new ArrayList<Player3>();
-	Player3 player;
+	ArrayList<Player> players= new ArrayList<Player>();
+	Player player;
 	Scanner input;
 	PlayerManager(Scanner input){
 		this.input =input;
 	}
 	
 	public void addPlayer() { //리스트를 인자로 받는 addPlayer함수 정의
-		Player3 player = new Player3();
+		Player player = new Player();
 		
 		System.out.print("Player Name:");
 		player.name = input.next(); //선수 이름 입력
@@ -58,7 +58,7 @@ public class PlayerManager {
 		System.out.print("Player's Number: ");
 		int playernum = input.nextInt();
 		for(int i=0;i<players.size();i++) {
-			Player3 player = players.get(i);
+			Player player = players.get(i);
 			if(player.number == playernum) {
 				int num = -1;
 				System.out.println("---------");
