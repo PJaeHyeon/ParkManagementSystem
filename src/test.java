@@ -9,7 +9,7 @@ public class test {
 				+ " Hold fast to dreams"
 				+ " For when dreams go"
 				+ " Life is a barren field"
-				+ " Frozen with snow";
+				+ " Frozen with snow1";
 		String[] words = poem.split(" ");
 		int wordscount = 0;
 		int setcount = 0;
