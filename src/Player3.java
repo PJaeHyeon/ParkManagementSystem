@@ -1,21 +1,21 @@
 
-public class Player {
+public class Player3 {
 	
 	String name;
 	int number;
 	String team;
 	String sal;
 	
-	public Player() {
+	public Player3() {
 	}
 	
-	public Player(String name,int number) 
+	public Player3(String name,int number) 
 	{
 		this.name = name;
 		this.number= number;
 	}
 	
-	public Player(String name, int number, String team, String sal) {
+	public Player3(String name, int number, String team, String sal) {
 		this.name = name;
 		this.number = number;
 		this.team=team;
