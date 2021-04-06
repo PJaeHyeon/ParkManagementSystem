@@ -35,7 +35,7 @@ public class PrimierLeague extends Player {
 		String team = input.next(); //선수 소속팀 입력
 		this.setTeam(team);
 		
-		System.out.print("Player's Salary($): ");
+		System.out.print("Player's Salary($):  ");
 		String sal = input.next(); //선수 연봉 입력
 		this.setSal(sal);
 	}
