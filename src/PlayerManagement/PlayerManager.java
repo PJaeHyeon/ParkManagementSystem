@@ -35,6 +35,8 @@ public class PlayerManager {
 
 		System.out.print("Player's Number: ");
 		int playernum = input.nextInt();
+		
+		
 		int index = -1;
 		for(int i = 0; i<players.size(); i++) {
 			if(players.get(i).number == playernum) {
@@ -45,6 +47,7 @@ public class PlayerManager {
 		if (index >=0) {
 			players.remove(index);
 			System.out.println("the player "+ playernum +" is deleted");
+			index = -1;
 		}
 		else {
 			System.out.println("the player has not been registered");
@@ -63,10 +66,10 @@ public class PlayerManager {
 			if(player.number == playernum) {
 				int num = -1;
 				System.out.println("---------");
-				System.out.println("1.Name");
-				System.out.println("2.Number");
-				System.out.println("3.Team");
-				System.out.println("4.Salary");
+				System.out.println("1.Edit Name");
+				System.out.println("2.Edit Number");
+				System.out.println("3.Edit Team");
+				System.out.println("4.Edit Salary");
 				System.out.println("---------");
 
 				System.out.print("수정할 항목 번호를 입력하세요:"); 
@@ -95,7 +98,7 @@ public class PlayerManager {
 		}
 
 	}
-	public void viewPlayer() { //리스트를 인자로 받는 viewPlayer 함수정의
+	public void viewPlayer() { //viewPlayer 함수정의
 		System.out.print("Player's Number(view all enter 0): ");
 		int playernum = input.nextInt();
 		if(playernum == 0) {
@@ -104,10 +107,15 @@ public class PlayerManager {
 			}
 		}
 		else {
-			players.get(playernum-1).printInfo();
+			for(int j = 0;j<players.size();j++) {
+				if(playernum == players.get(j).number) {
+					players.get(j).printInfo();
+				}
+				else {
+					System.out.println("The player has not been registered!!");
+				}	
+			}
 		}
-		
-		
 	}
 }
 

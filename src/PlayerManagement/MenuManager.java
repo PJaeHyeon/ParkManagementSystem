@@ -26,7 +26,7 @@ public class MenuManager {
 			
 			
 			if(num == 1) { //num 1일때 addPlayer 함수실행
-				playerManager.addPlayer();	 //Player리스트에 함수에서 리턴된값 추가
+				playerManager.addPlayer();	 //
 			}
 			
 			if(num == 2) { //num 2일때 deletePlayer 함수실행
