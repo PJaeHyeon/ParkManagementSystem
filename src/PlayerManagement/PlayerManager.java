@@ -18,8 +18,8 @@ public class PlayerManager {
 		while(true) {
 			System.out.println("1.K League");
 			System.out.println("2.Primier League");
-			System.out.println("3.");
-			System.out.println("4.");
+			System.out.println("3.BundesLiga");
+			System.out.println("4.SerieA");
 			System.out.print("Select num for Player's League:");
 			kind = input.nextInt();
 			if (kind == 1) {
@@ -34,6 +34,20 @@ public class PlayerManager {
 				players.add(player);
 				break;
 			}
+			else if(kind == 3) {
+				player = new BundesLiga();
+				player.getUserInput(input);
+				players.add(player);
+				break;
+			}
+			else if(kind == 4) {
+				player = new SerieA();
+				player.getUserInput(input);
+				players.add(player);
+				break;
+			}
+			
+			
 			else {
 				System.out.println("Select num for Player's League 1~4");
 			}
