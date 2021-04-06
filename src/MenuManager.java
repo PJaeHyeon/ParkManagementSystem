@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class MenuManager {
 
 	public static void main(String[] args) {
-		int num = 0;
+		int  num = 0;
 		ArrayList<String> player = new ArrayList<String>(); //메인함수에들어갈 player리스트 정의
 		
 		
