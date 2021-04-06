@@ -7,7 +7,7 @@ public class Player {
 
 	String name;
 	int number;
-	String team;
+	String team ;
 	String sal;
 	
 	public Player() {
