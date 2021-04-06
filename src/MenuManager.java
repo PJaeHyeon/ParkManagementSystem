@@ -19,7 +19,7 @@ public class MenuManager {
 			System.out.println("3. Edit Player                 *"); //Edit Player 출력
 			System.out.println("4. View Player                 *"); //View Player 출력
 			System.out.println("5. Show a Menu                 *"); //Show a Menu 출력
-			System.out.println("6. Exit                        *"); //Exit 출력
+			System.out.println("6. Exit                        **"); //Exit 출력
 			System.out.println("================================"); //Input Layout
 			
 			System.out.print("Select one number between 1-6: "); //메뉴 넘버 유도 문장 출력
