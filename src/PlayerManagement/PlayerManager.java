@@ -1,0 +1,114 @@
+package PlayerManagement;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PlayerManager {
+	ArrayList<Player> players= new ArrayList<Player>();
+	Player player;
+	Scanner input;
+	PlayerManager(Scanner input){
+		this.input =input;
+	}
+	
+	public void addPlayer() { //리스트를 인자로 받는 addPlayer함수 정의
+		Player player = new Player();
+		
+		System.out.print("Player Name:");
+		player.name = input.next(); //선수 이름 입력
+		
+		System.out.print("Player Number:");
+		player.number = input.nextInt(); //선수 번호 입력		
+		
+		System.out.print("Player's Team: ");
+		player.team = input.next(); //선수 소속팀 입력
+		
+		
+		System.out.print("Player's Salary(억): ");
+		player.sal = input.next(); //선수 연봉 입력
+		
+		players.add(player);
+
+	}
+
+	public void deletePlayer() { //리스트를 인자로 받는 deletePlayer 함수 정의
+
+		System.out.print("Player's Number: ");
+		int playernum = input.nextInt();
+		int index = -1;
+		for(int i = 0; i<players.size(); i++) {
+			if(players.get(i).number == playernum) {
+				index = i;
+				break;
+			}
+		}
+		if (index >=0) {
+			players.remove(index);
+			System.out.println("the player "+ playernum +" is deleted");
+		}
+		else {
+			System.out.println("the player has not been registered");
+			return;
+		}
+			
+		
+	}
+	
+	public void editPlayer() { //리스트를 인자로 받는 editPlayer 함수 정의
+
+		System.out.print("Player's Number: ");
+		int playernum = input.nextInt();
+		for(int i=0;i<players.size();i++) {
+			Player player = players.get(i);
+			if(player.number == playernum) {
+				int num = -1;
+				System.out.println("---------");
+				System.out.println("1.Name");
+				System.out.println("2.Number");
+				System.out.println("3.Team");
+				System.out.println("4.Salary");
+				System.out.println("---------");
+
+				System.out.print("수정할 항목 번호를 입력하세요:"); 
+				num = input.nextInt();
+				if(num == 1) { 									//입력한 함수가 1일때
+					System.out.print("수정할 이름 입력: ");
+					player.name = input.next();
+				}
+				else if(num == 2) {									//입력한 함수가 2일때
+					System.out.print("수정할 번호 입력: ");
+					player.number = input.nextInt();
+				}
+				else if(num == 3) {									//입력한 함수가 3일때
+					System.out.print("수정할 팀 입력: ");
+					player.team = input.next();
+				}
+				else if(num == 4) {									//입력한 함수가 4일때
+					System.out.print("수정할 연봉 입력: ");
+					player.sal = input.next();
+				}	
+
+
+				System.out.println("the player to be edited is "+playernum);
+
+			}
+		}
+
+	}
+	public void viewPlayer() { //리스트를 인자로 받는 viewPlayer 함수정의
+		System.out.print("Player's Number(view all enter 0): ");
+		int playernum = input.nextInt();
+		if(playernum == 0) {
+			for (int i = 0;i<players.size();i++) {
+				players.get(i).printInfo();
+			}
+		}
+		else {
+			players.get(playernum-1).printInfo();
+		}
+		
+		
+	}
+}
+
+
