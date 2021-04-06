@@ -12,22 +12,35 @@ public class PlayerManager {
 	}
 	
 	public void addPlayer() { //리스트를 인자로 받는 addPlayer함수 정의
-		Player player = new Player();
 		
-		System.out.print("Player Name:");
-		player.name = input.next(); //선수 이름 입력
+		int kind = 0 ;
+		Player player;
+		while(true) {
+			System.out.println("1.K League");
+			System.out.println("2.Primier League");
+			System.out.println("3.");
+			System.out.println("4.");
+			System.out.print("Select num for Player's League:");
+			kind = input.nextInt();
+			if (kind == 1) {
+				player = new Player();
+				player.getUserInput(input);
+				players.add(player);
+				break;
+			}
+			else if(kind == 2) {
+				player = new PrimierLeague();
+				player.getUserInput(input);
+				players.add(player);
+				break;
+			}
+			else {
+				System.out.println("Select num for Player's League 1~4");
+			}
+		}
 		
-		System.out.print("Player Number:");
-		player.number = input.nextInt(); //선수 번호 입력		
-		
-		System.out.print("Player's Team: ");
-		player.team = input.next(); //선수 소속팀 입력
-		
-		
-		System.out.print("Player's Salary(억): ");
-		player.sal = input.next(); //선수 연봉 입력
-		
-		players.add(player);
+
+
 
 	}
 
@@ -39,7 +52,7 @@ public class PlayerManager {
 		
 		int index = -1;
 		for(int i = 0; i<players.size(); i++) {
-			if(players.get(i).number == playernum) {
+			if(players.get(i).getNumber() == playernum) {
 				index = i;
 				break;
 			}
@@ -63,7 +76,7 @@ public class PlayerManager {
 		int playernum = input.nextInt();
 		for(int i=0;i<players.size();i++) {
 			Player player = players.get(i);
-			if(player.number == playernum) {
+			if(player.getNumber() == playernum) {
 				int num = -1;
 				System.out.println("---------");
 				System.out.println("1.Edit Name");
@@ -76,19 +89,23 @@ public class PlayerManager {
 				num = input.nextInt();
 				if(num == 1) { 									//입력한 함수가 1일때
 					System.out.print("수정할 이름 입력: ");
-					player.name = input.next();
+					String name = input.next();
+					player.setName(name);
 				}
 				else if(num == 2) {									//입력한 함수가 2일때
 					System.out.print("수정할 번호 입력: ");
-					player.number = input.nextInt();
+					int number = input.nextInt();
+					player.setNumber(number);
 				}
 				else if(num == 3) {									//입력한 함수가 3일때
 					System.out.print("수정할 팀 입력: ");
-					player.team = input.next();
+					String team = input.next();
+					player.setTeam(team);
 				}
 				else if(num == 4) {									//입력한 함수가 4일때
 					System.out.print("수정할 연봉 입력: ");
-					player.sal = input.next();
+					String sal = input.next();
+					player.setSal(sal);
 				}	
 
 
@@ -108,7 +125,7 @@ public class PlayerManager {
 		}
 		else {
 			for(int j = 0;j<players.size();j++) {
-				if(playernum == players.get(j).number) {
+				if(playernum == players.get(j).getNumber()) {
 					players.get(j).printInfo();
 				}
 				else {
