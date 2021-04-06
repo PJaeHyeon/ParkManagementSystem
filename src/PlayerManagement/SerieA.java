@@ -15,13 +15,13 @@ public class SerieA extends Player  {
 			answer = input.next().charAt(0);
 			if(answer == 'y'|| answer == 'Y') {
 				System.out.print("Player Name by English:");
-				String name = input.next(); //선수 이름 입력
+				String name = input.next(); 
 				this.setName(name);
 				break;
 			}
 			else if(answer == 'n' || answer == 'N') {
 				System.out.print("Player Name by Korean:");
-				String name = input.next(); //선수 이름 입력
+				String name = input.next(); 
 				this.setName(name);
 				break;
 
@@ -30,7 +30,7 @@ public class SerieA extends Player  {
 			}
 		}
 		
-		System.out.print("Player's Team: ");
+		System.out.print("Player's Team:");
 		String team = input.next(); //선수 소속팀 입력
 		this.setTeam(team);
 		
