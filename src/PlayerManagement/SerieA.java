@@ -11,7 +11,7 @@ public class SerieA extends Player  {
 		
 		char answer = 'x';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='N') {
-			System.out.print("Can Speak English? (Y/N)");
+			System.out.print("Can Speak English? (Y/N):");
 			answer = input.next().charAt(0);
 			if(answer == 'y'|| answer == 'Y') {
 				System.out.print("Player Name by English:");
@@ -20,8 +20,7 @@ public class SerieA extends Player  {
 				break;
 			}
 			else if(answer == 'n' || answer == 'N') {
-				System.out.print("Player Name by Korean:");
-				String name = input.next(); 
+				String name = null; 
 				this.setName(name);
 				break;
 
