@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class BundesLiga extends Player  {
 	public void getUserInput(Scanner input) {
+		
+		this.setKind(PlayerKind.BundesLiga);
+		
 		System.out.print("Player Number:");
 		int number = input.nextInt(); //선수 번호 입력	
 		this.setNumber(number);

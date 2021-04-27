@@ -26,6 +26,13 @@ public class Player {
 		this.sal=sal;
 	}
 	
+	public Player(PlayerKind kind, String name, int number, String team, String sal) {
+		this.kind = kind;
+		this.name = name;
+		this.number = number;
+		this.team=team;
+		this.sal=sal;
+	}
 	
 	public PlayerKind getKind() {
 		return kind;
@@ -67,9 +74,25 @@ public class Player {
 		this.sal = sal;
 	}
 
-	
+	String pkind = "none";
 	public void printInfo() {
-		System.out.println("Name :" + name + ", Number:"+number+", Team:"+team+", Salary:"+sal);
+		switch(this.kind) {
+		case KLeague:
+			pkind = "KLeague";
+			break;
+		case BundesLiga:
+			pkind = "BundesLiga";
+			break;
+		case PremierLeague:
+			pkind = "PremierLeague";
+			break;
+		case SerieA:
+			pkind = "SerieA";
+			break;
+		default:
+			
+		}
+		System.out.println("League :"+ pkind +", Name :" + name + ", Number:"+number+", Team:"+team+", Salary:"+sal);
 	}
 	
 	public void getUserInput(Scanner input) {

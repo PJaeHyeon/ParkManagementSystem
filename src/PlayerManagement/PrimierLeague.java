@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class PrimierLeague extends Player {
 	public void getUserInput(Scanner input) {
 		
+		this.setKind(PlayerKind.PremierLeague);
 		
 		System.out.print("Player Number:");
 		int number = input.nextInt(); //선수 번호 입력	

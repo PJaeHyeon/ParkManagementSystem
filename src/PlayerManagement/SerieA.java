@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class SerieA extends Player  {
 	public void getUserInput(Scanner input) {
 		
+		this.setKind(PlayerKind.SerieA);
+		
 		System.out.print("Player Number:");
 		int number = input.nextInt(); //선수 번호 입력	
 		this.setNumber(number);
