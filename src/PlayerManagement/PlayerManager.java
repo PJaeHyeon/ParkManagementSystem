@@ -20,28 +20,28 @@ public class PlayerManager {
 			System.out.println("2.Primier League");
 			System.out.println("3.BundesLiga");
 			System.out.println("4.SerieA");
-			System.out.print("Select num for Player's League:");
+			System.out.print("Select num for Player's League(1-4):");
 			kind = input.nextInt();
 			if (kind == 1) {
-				player = new Player();
+				player = new Player(PlayerKind.KLeague);
 				player.getUserInput(input);
 				players.add(player);
 				break;
 			}
 			else if(kind == 2) {
-				player = new PrimierLeague();
+				player = new PrimierLeague(PlayerKind.PremierLeague);
 				player.getUserInput(input);
 				players.add(player);
 				break;
 			}
 			else if(kind == 3) {
-				player = new BundesLiga();
+				player = new BundesLiga(PlayerKind.BundesLiga);
 				player.getUserInput(input);
 				players.add(player);
 				break;
 			}
 			else if(kind == 4) {
-				player = new SerieA();
+				player = new SerieA(PlayerKind.SerieA);
 				player.getUserInput(input);
 				players.add(player);
 				break;

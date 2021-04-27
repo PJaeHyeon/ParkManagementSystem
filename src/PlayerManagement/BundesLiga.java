@@ -3,9 +3,14 @@ package PlayerManagement;
 import java.util.Scanner;
 
 public class BundesLiga extends Player  {
+	
+	public BundesLiga(PlayerKind kind) {
+		super(kind);
+	}
+	
 	public void getUserInput(Scanner input) {
 		
-		this.setKind(PlayerKind.BundesLiga);
+		
 		
 		System.out.print("Player Number:");
 		int number = input.nextInt(); //선수 번호 입력	

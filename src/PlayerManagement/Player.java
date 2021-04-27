@@ -13,6 +13,10 @@ public class Player {
 	public Player() {
 	}
 	
+	public Player(PlayerKind kind) {
+		this.kind = kind;
+	}
+	
 	public Player(String name,int number) 
 	{
 		this.name = name;

@@ -3,9 +3,14 @@ package PlayerManagement;
 import java.util.Scanner;
 
 public class SerieA extends Player  {
+	
+	public SerieA(PlayerKind kind) {
+		super(kind);
+	}
+	
 	public void getUserInput(Scanner input) {
 		
-		this.setKind(PlayerKind.SerieA);
+		
 		
 		System.out.print("Player Number:");
 		int number = input.nextInt(); //선수 번호 입력	
