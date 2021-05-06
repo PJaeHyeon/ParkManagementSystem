@@ -2,7 +2,7 @@ package PlayerManagement;
 
 import java.util.Scanner;
 
-public class BundesLiga extends Player  {
+public class BundesLiga extends Player implements PlayerInput {
 	
 	public BundesLiga(PlayerKind kind) {
 		super(kind);
@@ -45,6 +45,25 @@ public class BundesLiga extends Player  {
 			}
 		}
 
+	}
+	public void printInfo() {
+		switch(this.kind) {
+		case KLeague:
+			pkind = "KLeague";
+			break;
+		case BundesLiga:
+			pkind = "BundesLiga";
+			break;
+		case PremierLeague:
+			pkind = "PremierLeague";
+			break;
+		case SerieA:
+			pkind = "SerieA";
+			break;
+		default:
+			
+		}
+		System.out.println("League :"+ pkind +", Name :" + name + ", Number:"+number+", Team:"+team+", Salary:"+sal);
 	}
 	
 

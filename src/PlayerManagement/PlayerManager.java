@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PlayerManager {
-	ArrayList<Player> players= new ArrayList<Player>();
+	ArrayList<PlayerInput> players= new ArrayList<PlayerInput>();
 	Player player;
 	Scanner input;
 	PlayerManager(Scanner input){
@@ -14,7 +14,7 @@ public class PlayerManager {
 	public void addPlayer() { //리스트를 인자로 받는 addPlayer함수 정의
 		
 		int kind = 0 ;
-		Player player;
+		PlayerInput playerInput;
 		while(true) {
 			System.out.println("1.K League");
 			System.out.println("2.Primier League");
@@ -23,39 +23,33 @@ public class PlayerManager {
 			System.out.print("Select num for Player's League(1-4):");
 			kind = input.nextInt();
 			if (kind == 1) {
-				player = new Player(PlayerKind.KLeague);
-				player.getUserInput(input);
-				players.add(player);
+				playerInput = new KLeague(PlayerKind.KLeague);
+				playerInput.getUserInput(input);
+				players.add(playerInput);
 				break;
 			}
 			else if(kind == 2) {
-				player = new PrimierLeague(PlayerKind.PremierLeague);
-				player.getUserInput(input);
-				players.add(player);
+				playerInput = new PrimierLeague(PlayerKind.PremierLeague);
+				playerInput.getUserInput(input);
+				players.add(playerInput);
 				break;
 			}
 			else if(kind == 3) {
-				player = new BundesLiga(PlayerKind.BundesLiga);
-				player.getUserInput(input);
-				players.add(player);
+				playerInput = new BundesLiga(PlayerKind.BundesLiga);
+				playerInput.getUserInput(input);
+				players.add(playerInput);
 				break;
 			}
 			else if(kind == 4) {
-				player = new SerieA(PlayerKind.SerieA);
-				player.getUserInput(input);
-				players.add(player);
+				playerInput = new SerieA(PlayerKind.SerieA);
+				playerInput.getUserInput(input);
+				players.add(playerInput);
 				break;
 			}
-			
-			
 			else {
 				System.out.println("Select num for Player's League 1~4");
 			}
 		}
-		
-
-
-
 	}
 
 	public void deletePlayer() { //리스트를 인자로 받는 deletePlayer 함수 정의
@@ -89,8 +83,8 @@ public class PlayerManager {
 		System.out.print("Player's Number: ");
 		int playernum = input.nextInt();
 		for(int i=0;i<players.size();i++) {
-			Player player = players.get(i);
-			if(player.getNumber() == playernum) {
+			PlayerInput playerInput = players.get(i);
+			if(playerInput.getNumber() == playernum) {
 				int num = -1;
 				System.out.println("---------");
 				System.out.println("1.Edit Name");
@@ -98,36 +92,31 @@ public class PlayerManager {
 				System.out.println("3.Edit Team");
 				System.out.println("4.Edit Salary");
 				System.out.println("---------");
-
 				System.out.print("수정할 항목 번호를 입력하세요:"); 
 				num = input.nextInt();
 				if(num == 1) { 									//입력한 함수가 1일때
 					System.out.print("수정할 이름 입력: ");
 					String name = input.next();
-					player.setName(name);
+					playerInput.setName(name);
 				}
 				else if(num == 2) {									//입력한 함수가 2일때
 					System.out.print("수정할 번호 입력: ");
 					int number = input.nextInt();
-					player.setNumber(number);
+					playerInput.setNumber(number);
 				}
 				else if(num == 3) {									//입력한 함수가 3일때
 					System.out.print("수정할 팀 입력: ");
 					String team = input.next();
-					player.setTeam(team);
+					playerInput.setTeam(team);
 				}
 				else if(num == 4) {									//입력한 함수가 4일때
 					System.out.print("수정할 연봉 입력: ");
 					String sal = input.next();
-					player.setSal(sal);
+					playerInput.setSal(sal);
 				}	
-
-
 				System.out.println("the player to be edited is "+playernum);
-
 			}
 		}
-
 	}
 	public void viewPlayer() { //viewPlayer 함수정의
 		System.out.print("Player's Number(view all enter 0): ");

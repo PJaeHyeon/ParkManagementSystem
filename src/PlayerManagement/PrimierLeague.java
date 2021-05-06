@@ -2,7 +2,7 @@ package PlayerManagement;
 
 import java.util.Scanner;
 
-public class PrimierLeague extends Player {
+public class PrimierLeague extends Player implements PlayerInput{
 	
 	public PrimierLeague(PlayerKind kind) {
 		super(kind);
@@ -43,6 +43,26 @@ public class PrimierLeague extends Player {
 		System.out.print("Player's Salary($):  ");
 		String sal = input.next(); //선수 연봉 입력
 		this.setSal(sal);
+	}
+	
+	public void printInfo() {
+		switch(this.kind) {
+		case KLeague:
+			pkind = "KLeague";
+			break;
+		case BundesLiga:
+			pkind = "BundesLiga";
+			break;
+		case PremierLeague:
+			pkind = "PremierLeague";
+			break;
+		case SerieA:
+			pkind = "SerieA";
+			break;
+		default:
+			
+		}
+		System.out.println("League :"+ pkind +", Name :" + name + ", Number:"+number+", Team:"+team+", Salary:"+sal);
 	}
 
 }
