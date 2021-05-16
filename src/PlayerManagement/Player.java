@@ -2,7 +2,9 @@ package PlayerManagement;
 
 import java.util.Scanner;
 
-public abstract class  Player {
+import Exception.NumberException;
+
+public abstract class  Player implements PlayerInput{
 	
 	protected PlayerKind kind = PlayerKind.KLeague;
 	protected String name;
@@ -58,7 +60,10 @@ public abstract class  Player {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(int number) throws NumberException{
+		if(number>=100) {
+			throw new NumberException();
+		}
 		this.number = number;
 	}
 
@@ -81,6 +86,58 @@ public abstract class  Player {
 	String pkind = "none";
 	
 	public abstract void printInfo(); 
+	
+	public void setPlayerName(Scanner input) {
+		System.out.print("Player Name: ");
+		String name = input.next();
+		this.setName(name);
+	}
+	
+	public void setPlayerNum(Scanner input) {
+		int number = 101;
+		while(number>=100) {
+			System.out.print("Player Num: ");
+			number = input.nextInt();
+			try {
+				this.setNumber(number);
+			} catch (NumberException e) {
+				System.out.println("Incorrect Number(0<number<100)");
+			}
+		}
+	}
+	
+	public void setPlayerTeam(Scanner input) {
+		System.out.print("Player Team: ");
+		String team = input.next();
+		this.setTeam(team);
+	}
+	
+	public void setPlayerSal(Scanner input) {
+		System.out.print("Player Salary($): ");
+		String sal = input.next();
+		this.setSal(sal);
+	}
+	
+	public String getKindString() {
+		String pkind = "none";
+		switch(this.kind) {
+		case KLeague:
+			pkind = "KLeague";
+			break;
+		case BundesLiga:
+			pkind = "BundesLiga";
+			break;
+		case PremierLeague:
+			pkind = "PremierLeague";
+			break;
+		case SerieA:
+			pkind = "SerieA";
+			break;
+		default:
+		}
+		return pkind;
+		
+	}
 		
 	
 
