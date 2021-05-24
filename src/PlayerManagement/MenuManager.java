@@ -1,16 +1,31 @@
 package PlayerManagement;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import log.EventLogger;
+
 public class MenuManager {
+	static EventLogger logger = new EventLogger("log.txt");
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);	
-		PlayerManager playerManager = new PlayerManager(input);
 		
-		selectMenu(input, playerManager);	
+		
+		Scanner input = new Scanner(System.in);	
+		PlayerManager playerManager = getObject("PlayerManager.ser");
+		if(playerManager == null) {
+			playerManager = new PlayerManager(input);
+		}
+				
+		selectMenu(input, playerManager);
+		putObject(playerManager, "PlayerManager.ser");
 	}
 	
 	public static void selectMenu(Scanner input, PlayerManager playerManager) {
@@ -22,16 +37,20 @@ public class MenuManager {
 				num = input.nextInt(); //num 입력 int 변수 선언
 				switch(num) {
 				case 1:  //num 1일때 addPlayer 함수실행
-					playerManager.addPlayer();	 
+					playerManager.addPlayer();
+					logger.log("add a player");
 					break;
 				case 2:  //num 2일때 deletePlayer 함수실행
 					playerManager.deletePlayer();
+					logger.log("delete a player");
 					break;
 				case 3:  //num 3일때 editPlayer 함수실행
 					playerManager.editPlayer();
+					logger.log("edit a player");
 					break;
 				case 4:  //num 4일때 viewPlayer 함수실행
 					playerManager.viewPlayer();
+					logger.log("view a list of player");
 					break;
 				default:
 					continue;
@@ -56,5 +75,47 @@ public class MenuManager {
 		System.out.println("5. Show a Menu                 *"); //Show a Menu 출력
 		System.out.println("6. Exit                        *"); //Exit 출력
 		System.out.println("================================"); //Input Layout
+	}
+	
+	public static PlayerManager getObject(String filename) {
+		PlayerManager playerManager = null;
+		
+		try {
+			FileInputStream file = new FileInputStream(filename);
+			ObjectInputStream in= new ObjectInputStream(file);
+			playerManager = (PlayerManager) in.readObject();
+			
+			in.close();
+			file.close();
+		
+		} catch (FileNotFoundException e) {
+			return playerManager;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return playerManager;	
+	}
+	public static void putObject(PlayerManager playerManager,String filename) {
+		try {
+			FileOutputStream file = new FileOutputStream(filename);
+			ObjectOutputStream out= new ObjectOutputStream(file);
+			
+			out.writeObject(playerManager);
+			
+			out.close();
+			file.close();
+		
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
 	}
 }

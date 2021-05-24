@@ -1,13 +1,19 @@
 package PlayerManagement;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class PlayerManager {
+public class PlayerManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1692794031481506985L;
+	
 	ArrayList<PlayerInput> players= new ArrayList<PlayerInput>();
 	Player player;
-	Scanner input;
+	transient Scanner input;
 	PlayerManager(Scanner input){
 		this.input =input;
 	}
@@ -129,22 +135,25 @@ public class PlayerManager {
 	}
 	
 	public void viewPlayer() { //viewPlayer 함수정의
-		System.out.print("Player's Number(view all enter 0): ");
-		int playernum = input.nextInt();
-		if(playernum == 0) {
-			for (int i = 0;i<players.size();i++) {
-				players.get(i).printInfo();
-			}
-		}
-		else {
-			for(int j = 0;j<players.size();j++) {
-				if(playernum == players.get(j).getNumber()) {
-					players.get(j).printInfo();
-				}
-				else {
-					System.out.println("The player has not been registered!!");
-				}	
-			}
+//		System.out.print("Player's Number(view all enter 0): ");
+//		int playernum = input.nextInt();
+//		if(playernum == 0) {
+//			for (int i = 0;i<players.size();i++) {
+//				players.get(i).printInfo();
+//			}
+//		}
+//		else {
+//			for(int j = 0;j<players.size();j++) {
+//				if(playernum == players.get(j).getNumber()) {
+//					players.get(j).printInfo();
+//				}
+//				else {
+//					System.out.println("The player has not been registered!!");
+//				}	
+//			}
+//		}
+		for (int i = 0;i<players.size();i++) {
+			players.get(i).printInfo();
 		}
 	}
 	

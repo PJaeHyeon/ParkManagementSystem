@@ -1,10 +1,11 @@
 package PlayerManagement;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import Exception.NumberException;
 
-public abstract class  Player implements PlayerInput{
+public abstract class  Player implements PlayerInput,Serializable{
 	
 	protected PlayerKind kind = PlayerKind.KLeague;
 	protected String name;
