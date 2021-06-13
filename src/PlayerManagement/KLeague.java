@@ -12,10 +12,7 @@ public class KLeague extends Player implements PlayerInput{
 		setPlayerNum(input);
 		setPlayerName(input);
 		setPlayerTeam(input);
-		
-		System.out.print("Player's Salary(억): ");
-		String sal = input.next() + "억원"; //선수 연봉 입력
-		this.setSal(sal);
+		setPlayerSal(input);
 	}
 	
 	public void printInfo() {

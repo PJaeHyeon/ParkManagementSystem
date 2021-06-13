@@ -10,7 +10,11 @@ public interface PlayerInput {
 	
 	public int getNumber();
 	
+	public String getName();
+	
 	public void setName(String name);
+	
+	public String getTeam();
 	
 	public void setTeam(String team);
 	
@@ -30,7 +34,4 @@ public interface PlayerInput {
 	
 	public void setPlayerSal(Scanner input);
 	
-	
-	
-
 }

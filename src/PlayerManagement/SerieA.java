@@ -9,8 +9,7 @@ public class SerieA extends WorldPlayer implements PlayerInput {
 	}
 	
 	public void getUserInput(Scanner input) {
-		
-		
+
 		setPlayerNum(input);
 		playerNameset(input);
 		setPlayerTeam(input);

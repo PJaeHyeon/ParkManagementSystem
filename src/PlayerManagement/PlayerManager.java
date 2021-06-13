@@ -17,6 +17,17 @@ public class PlayerManager implements Serializable{
 	PlayerManager(Scanner input){
 		this.input =input;
 	}
+	public void addPlayer(String Num,String Name, String Team, String Sal) {
+		PlayerInput playerInput = new KLeague(PlayerKind.KLeague);
+		playerInput.getUserInput(input);
+		players.add(playerInput);
+	}
+	
+	public void addPlayer(PlayerInput playerInput) {
+		players.add(playerInput);
+	}
+	
+	
 	
 	public void addPlayer() { //리스트를 인자로 받는 addPlayer함수 정의
 		
@@ -155,6 +166,14 @@ public class PlayerManager implements Serializable{
 		for (int i = 0;i<players.size();i++) {
 			players.get(i).printInfo();
 		}
+	}
+	
+	public int size() {
+		return players.size();
+	}
+	
+	public PlayerInput get(int index) {
+		return (Player) players.get(index);
 	}
 	
 	
