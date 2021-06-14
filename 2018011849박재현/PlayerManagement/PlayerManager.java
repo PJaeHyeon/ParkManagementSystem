@@ -13,7 +13,7 @@ public class PlayerManager implements Serializable{
 	
 	ArrayList<PlayerInput> players= new ArrayList<PlayerInput>();
 	Player player;
-	transient Scanner input;
+	transient Scanner input ;
 	PlayerManager(Scanner input){
 		this.input =input;
 	}
@@ -40,6 +40,7 @@ public class PlayerManager implements Serializable{
 				System.out.println("3.BundesLiga");
 				System.out.println("4.SerieA");
 				System.out.print("Select num for Player's League(1-4):");
+				input = new Scanner(System.in);
 				kind = input.nextInt();
 				if (kind == 1) {
 					playerInput = new KLeague(PlayerKind.KLeague);

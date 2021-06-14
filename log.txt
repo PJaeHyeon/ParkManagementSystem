@@ -1,0 +1,4 @@
+6월 14, 2021 10:28:27 오후 log.EventLogger log
+INFO: add a player
+6월 14, 2021 10:28:29 오후 log.EventLogger log
+INFO: view a list of player
